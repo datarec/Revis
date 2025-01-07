@@ -1,2 +1,2 @@
 # Revis
-Automated hacking tool. 
+Currently in development. 
