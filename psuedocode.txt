@@ -1,0 +1,20 @@
+START
+
+DISPLAY MENU> 
+    GENERATE_PAYLOAD 
+        > choose os
+             IF linux, generate linux payload
+             Set RHOST, LHOST, port etc.
+             
+             ELIF windows,  generate windows payload
+             Set RHOST, LHOST, port etc.  
+             
+             writes payload as random string character .py 
+             OR if the user wants to use a custom payload name they're given the option
+
+    HACKVICTIM:
+         Starts Ngrok server to capture the request
+         also opens a cmd prompt and starts ncat 
+        
+             
+    
