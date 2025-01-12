@@ -1,30 +1,29 @@
-# R E V I S, a tool used to hack victims using python.
-
 import time
 import socket
 import reversed
 
 def main():
-
-	options = input("""
+	try:
+		options = input("""
 R e v i s
-	"Hacking made easy"
+	Hacking made easy.
 
-1); Generate Payload 
-2); Hack Victim.  
-
+1) Generate payload and Hack (Partially automated - Simpler)
+2) Generate Payload (Manual - Advanced) 
 
 
 >>  """)
 
-	if options == "1":
-		reversed.payloadSelection()
-	elif options == "2":
-		pass
-	else:
-		print("Select using 1 or 2. ")
-		time.sleep(2)
-		main()
+		if options == "1":
+			pass
+		elif options == "2":
+			reversed.payloadSelection()
+		else:
+			print("Select using 1 or 2. ")
+			time.sleep(2)
+			main()
+	except KeyboardInterrupt:
+		print("Good-bye!")
 
 
 main()
