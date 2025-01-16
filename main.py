@@ -4,7 +4,11 @@ import reversed
 from termcolor import colored 
 import subprocess
 
+def clear_screen():
+	subprocess.run(["cls"], shell=True)
+
 def main():
+	clear_screen()
 	try:
 		options = input(colored("""R e v i s
 	Hacking made easy.
@@ -13,19 +17,22 @@ def main():
 2) Generate Payload (Manual - Advanced) 
 
 
->>  """, "red"))
+>>  """, "light_red"))
 
 		if options == "1":
-			pass
+			clear_screen()
+			print("Currently in development.") # TEMP
+			time.sleep(2) # TEMP
+			main()
 		elif options == "2":
 			reversed.payloadSelection()
 		else:
-			print("\nSelect using 1 or 2. ")
+			print(colored("\nSelect using 1 or 2. ", "light_red"))
 			time.sleep(2)
 			subprocess.run(["cls"], shell=True)
 			main()
 	except KeyboardInterrupt:
-		print(colored("\n\nGood-bye!", "red"))
+		print(colored("\n\nGood-bye!", "light_red"))
 
 
 main()
