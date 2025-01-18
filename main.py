@@ -3,6 +3,7 @@ import socket
 import reversed
 from termcolor import colored 
 import subprocess
+import automated
 
 def clear_screen():
 	subprocess.run(["cls"], shell=True)
@@ -20,10 +21,7 @@ def main():
 >>  """, "light_red"))
 
 		if options == "1":
-			clear_screen()
-			print("Currently in development.") # TEMP
-			time.sleep(2) # TEMP
-			main()
+			automated.main()
 		elif options == "2":
 			reversed.payloadSelection()
 		else:
