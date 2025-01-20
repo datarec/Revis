@@ -3,9 +3,14 @@ from termcolor import colored
 import threading
 
 def start_ngrok_service():
-    subprocess.CREATE_NEW_CONSOLE
-    #process = subprocess.Popen(["ngrok", "tcp", "3443"], 
-    #                           shell=True,)
+    NEW_CONSOLE = subprocess.CREATE_NEW_CONSOLE
+    subprocess.Popen(
+                    ["ngrok", "tcp", "3333"], 
+                     creationflags=NEW_CONSOLE
+    )
+    subprocess.Popen(
+                    ["python", "main.py"] 
+    )
 
 
 def clear_screen():
