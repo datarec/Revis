@@ -1,6 +1,6 @@
 import time
 import socket
-import reversed
+import reverse_shell_gen
 from termcolor import colored 
 import subprocess
 import automated
