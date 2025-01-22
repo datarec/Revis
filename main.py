@@ -23,7 +23,7 @@ def main():
 		if options == "1":
 			automated.main()
 		elif options == "2":
-			reversed.payloadSelection()
+			reverse_shell_gen.payloadSelection()
 		else:
 			print(colored("\nSelect using 1 or 2. ", "light_red"))
 			time.sleep(2)
