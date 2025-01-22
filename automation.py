@@ -13,10 +13,9 @@ def start_ngrok_service():
 
 def start_listener():
     try:
-        print("""In the Ngrok window look for the socket. 
-Should look something like this: 0.tcp.au.ngrok.io:12527""")
-        
-        input("Enter: ")
+        print("[!] In the Ngrok window look for IP:PORT next to forwarding.")
+        print("\n[!] Copy the PORT and enter it in the console.")
+        input("\n\nPORT: ")
         listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         listener.bind(("localhost", 4444))
         listener.listen()
