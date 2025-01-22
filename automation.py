@@ -2,7 +2,7 @@ import subprocess
 from termcolor import colored
 import threading
 import socket
-import reversed
+import reverse_shell_gen
 
 def start_ngrok_service():
     NEW_CONSOLE = subprocess.CREATE_NEW_CONSOLE
