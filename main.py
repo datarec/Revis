@@ -33,4 +33,5 @@ def main():
 		print(colored("\n\nGood-bye!", "light_red"))
 
 
-main()
+if __name__ == "__main__":
+    main()
