@@ -28,7 +28,8 @@ def start_listener():
     listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     listener.bind(("localhost", 4444))
     listener.listen()
-    ip, data = listener.accept()
+    conn, ip = listener.accept()
+    print("\nConnection recieved from {}!".format(ip[0]))
 
 
 def generate_payload():
