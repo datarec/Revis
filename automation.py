@@ -60,6 +60,3 @@ def main():
     generate_payload()
     start_listener()
 
-
-if __name__ == "__main__":
-    main()
