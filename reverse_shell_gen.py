@@ -74,7 +74,7 @@ except KeyboardInterrupt:
         name += letters
     with open(f"{name}.pyw", "w") as payload:
         payload.write(windows_payload)
-    print(f"\nPayload generated: {name}.pyw in {os.getcwd()}")
+    print(colored(f"\nPayload generated: {name}.pyw in {os.getcwd()}", "light_red"))
 
 
 
