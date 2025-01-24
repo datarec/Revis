@@ -109,4 +109,3 @@ Payload Selection Menu: """, "light_red"))
         time.sleep(2)
         clear_screen()
         payloadSelection()
-
