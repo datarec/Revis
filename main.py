@@ -3,7 +3,7 @@ import socket
 import reverse_shell_gen
 from termcolor import colored 
 import subprocess
-import automation
+import automated
 
 def clear_screen():
 	subprocess.run(["cls"], shell=True)
