@@ -15,11 +15,16 @@ def sleep():
 
 
 def start_ngrok_service():
-    NEW_CONSOLE = subprocess.CREATE_NEW_CONSOLE
-    subprocess.Popen(
+    try:
+        NEW_CONSOLE = subprocess.CREATE_NEW_CONSOLE
+        subprocess.Popen(
                     ["ngrok", "tcp", "4444"], 
                      creationflags=NEW_CONSOLE 
-    )
+        )
+    except FileNotFoundError:
+        clear_screen()
+        print(colored("ERROR: Please install Ngrok", "light_red"))
+        print(colored("CTRL-C to Close the program.", "light_red"))
 
 
 def start_listener():
