@@ -7,5 +7,5 @@
 2. make an account, grab your auth token
 3. Install then add the executable to the PATH, C:\Windows\System32
 4. run "ngrok config add-authtoken <auth token>" in a command prompt
-5. run the tool!
+5. all done.
 
