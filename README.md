@@ -9,3 +9,10 @@
 4. run "ngrok config add-authtoken <auth token>" in a command prompt
 5. all done.
 
+# Installation
+if the requirements.py doesn't work then you'll have to do a manual installation
+
+**pip3 install termcolor**
+
+after you will need to head over to ngrok.com, download the portable executable then copy it to your winodws PATH directory.  
+
