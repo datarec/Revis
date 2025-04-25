@@ -17,6 +17,8 @@ if the requirements.py doesn't work then you'll have to do a manual installation
 after you will need to head over to ngrok.com, download the portable executable then copy it to your winodws PATH directory.  
 
 # Notes
+This is a tool you can use effectively use get into another computer remotely. 
+
 Paired with an understanding of social engineering you could quite easily conduct some interesting research and you'd 
 be very surprised with what you could achieve. 
 
