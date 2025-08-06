@@ -1,2 +1,0 @@
-add color to some parts
-add ip verification to manual hacking. 
