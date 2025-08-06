@@ -10,15 +10,14 @@
 5. all done.
 
 # Installation
-if the requirements.py doesn't work then you'll have to do a manual installation
+if the requirements.py doesn't work then you'll have to do a manual installation, please refer to the bold text below: 
 
 **pip3 install termcolor**
 
-after you will need to head over to ngrok.com, download the portable executable then copy it to your winodws PATH directory.  
+after you will need to head over to ngrok.com, download the portable executable then copy it to your windows PATH directory.
 
-# Notes
-This is a tool you can use effectively use get into another computer remotely. 
+# Information
+This is a tool you can effectively use get into another computer remotely, the tool utilizes TCP sockets to send and recieve 
+data via a process that pipes standard input and output through the socket and onto your computers screen.
 
-Paired with an understanding of social engineering you could quite easily conduct some interesting research and you'd 
-be very surprised with what you could achieve. 
-
+Whether it be locally, over the internet.. this tool aims to provide some automation and simplicity with regards to executing reverse shells.
